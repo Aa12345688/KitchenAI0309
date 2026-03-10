@@ -1,0 +1,59 @@
+@import './fonts.css';
+@import './tailwind.css';
+@import './theme.css';
+
+/* Light Theme Strategy using extreme CSS filters to easily contrast everything without needing to override every utility class */
+.light-theme .filter-theme {
+    filter: invert(1) hue-rotate(180deg);
+}
+
+.light-theme .filter-theme img,
+.light-theme .filter-theme video {
+    filter: invert(1) hue-rotate(180deg);
+}
+
+/* Scrollbar styling to maintain mobile app look on desktop */
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 255, 136, 0.3);
+}
+
+/* Specifically style scrollbar for .no-scrollbar class so it remains scrollable via mouse drag on desktop */
+.no-scrollbar {
+    -ms-overflow-style: auto;
+    /* IE and Edge */
+    scrollbar-width: thin;
+    /* Firefox */
+    scrollbar-color: rgba(255, 255, 255, 0.1) transparent;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+    height: 3px;
+    width: 0px;
+}
+
+.no-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.no-scrollbar::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+}
+
+.no-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 255, 136, 0.4);
+}
